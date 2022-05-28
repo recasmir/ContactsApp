@@ -6,13 +6,13 @@ export interface Contact {
   id:      string;
   age:     number;
   name:    string;
-  gender:  Gender;
+  gender:  string;
   company: string;
   email:   string;
   photo:   string;
 }
 
-export enum Gender {
-  Female = "female",
-  Male = "male",
-}
+// export enum Gender {
+//   Female = "female",
+//   Male = "male",
+// }

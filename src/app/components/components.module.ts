@@ -12,6 +12,10 @@ import { SingleContactComponent } from './single-contact/single-contact.componen
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    SearchComponent,
+    SingleContactComponent
   ]
 })
 export class ComponentsModule { }

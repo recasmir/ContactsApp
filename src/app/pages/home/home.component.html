@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="container-xxl p-4">
+  <div class="col-3">
+    <div class="row">
+      <div class="col-12">
+        <app-search (searchEvent)="receiveSearch($event)"></app-search>
+      </div>
+      <div class="col-12 bg-info">
+        <div class="row infoBox p-3">
+          <div class="col-2">
+            <ul class="ps-0 centerVertical">
+              <li *ngFor="let letter of letters; let i=index"
+                  class="letters">
+                {{letter}}
+              </li>
+            </ul>
+          </div>
+          <div class="col-9 borderLeft ms-4">
+            <ul class="ps-0">
+              <li *ngFor="let contact of contacts | filter : search : page"
+                  class="pb-1 contacts"
+                  (click)="expandContact(contact.id)">
+                {{contact.name}}
+              </li>
+            </ul>
+          </div>
+          <div class="col-1 dots centerVertical">
+            <i class="fa-solid fa-circle"
+               (click)="changePage(0)"
+               [ngClass]="'selected'"></i>
+            <i class="fa-solid fa-circle"
+              (click)="changePage(50)"
+              [ngClass]="'selected'"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <app-single-contact></app-single-contact>
+  </div>
+</div>

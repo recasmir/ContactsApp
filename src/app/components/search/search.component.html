@@ -1,1 +1,11 @@
-<p>search works!</p>
+
+  <div class="searchInput pt-2">
+  <input type="text"
+         class="col-12 rounded-pill mb-2"
+         placeholder="Search..."
+         [ngStyle]="{'color': 'black'}"
+         #txtSearch
+         (keyup)="onSearchContact(txtSearch.value)"/>
+  <i class="fa-solid fa-magnifying-glass"></i>
+</div>
+

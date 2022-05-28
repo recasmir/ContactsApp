@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FilterPipe } from './pipes/filter.pipe';
+import { PagesModule } from './pages/pages.module';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FilterPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PagesModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

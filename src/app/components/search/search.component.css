@@ -1,0 +1,15 @@
+.searchInput {
+  position: relative;
+}
+
+.searchInput i{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #008bc5;
+}
+
+input{
+  border: 1px solid white;
+  padding-left: 35px;
+}

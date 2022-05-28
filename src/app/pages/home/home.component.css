@@ -1,0 +1,49 @@
+li{
+  list-style: none;
+}
+
+.infoBox{
+  position: relative;
+}
+
+.centerVertical{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.dots{
+
+  right: 10px;
+}
+.dots i{
+  color: transparent;
+  border:2px solid #008bc5;
+  border-radius: 50%;
+}
+
+.dots i:hover{
+  cursor: pointer;
+  color: #008bc5;
+}
+
+.selected{
+  color:#008bc5;
+}
+
+.letters{
+  border: 2px solid #25728f;
+  padding: 10px 15px 10px 20px;
+  background-color: #008bc5;
+  border-radius: 5px;
+  color: white;
+  margin-top: 2px;
+}
+
+.borderLeft{
+  border-left: 2px solid white;
+}
+
+.contacts:hover{
+  cursor: pointer;
+}
