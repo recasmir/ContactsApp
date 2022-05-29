@@ -1,18 +1,52 @@
-<div class="container">
-  <div clsss="col-12 bg-info">
-    <div class="row">
+<div class="container ms-5">
+  <div clsss="col-12 ">
+    <div class="row bg-info">
       <div class="col-2">
-        <!-- <img src="{{singleContact.photo}}"> -->
+        <img src="{{singleContact.photo}}">
       </div>
-      <div class="col-6">
-        <!-- <h2>{{singleContact.name}}</h2> -->
+      <div class="col-6 infoBox">
+        <h2 class="centerVertical">{{singleContact.name}}</h2>
       </div>
-      <div class="col-4">
-        <app-search (searchEvent)="receiveSearch($event)"></app-search>
+      <div class="col-4 infoBox">
+        <app-search (searchEvent)="receiveSearch($event)"
+                    class="centerVertical"></app-search>
       </div>
     </div>
   </div>
-  <div clsss="col-12 bg-info">
+  <div clsss="col-12">
+    <div class="row bg-info p-4 mt-4 ">
+      <div class="col-12">
+        <div class="row justify-content-center">
+          <div class="col-2 bg-whit text-center m-2 contactCard"
+          *ngFor="let contact of shuffledContacts | filter:search:page:increment">
+            <img src="{{contact.photo}}">
+            <p>{{contact.name}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 dots justify-content-center d-flex">
+            <i class="fa-solid fa-circle mx-1"
+               (click)="changePage(0)"
+               ></i>
+            <i class="fa-solid fa-circle mx-1"
+              (click)="changePage(20)"
+              ></i>
+              <i class="fa-solid fa-circle mx-1"
+              (click)="changePage(40)"
+              ></i>
+              <i class="fa-solid fa-circle mx-1"
+              (click)="changePage(60)"
+              ></i>
+              <i class="fa-solid fa-circle mx-1"
+              (click)="changePage(80)"
+              ></i>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
 
   </div>
 

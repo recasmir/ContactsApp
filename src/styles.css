@@ -4,11 +4,33 @@
 }
 
 .bg-info{
-  background-color: #b5dfef;
+  background-color: #b5dfef!important;
   border-radius: 25px;
   box-shadow: -10px 10px 5px #7ba4b4;
 }
 
 h1,h2,h3,h4,h5,h6,p,li{
   color: #25728f;
+}
+
+.infoBox{
+  position: relative;
+}
+
+.centerVertical{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.dots i{
+  color: transparent;
+  border:2px solid #008bc5;
+  border-radius: 50%;
+}
+
+.dots i:hover{
+  cursor: pointer;
+  color: #008bc5;
 }

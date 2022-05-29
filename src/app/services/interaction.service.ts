@@ -17,4 +17,5 @@ export class InteractionService {
   getContactId(): Observable<string>{
     return this.subject$.asObservable();
   }
+
 }

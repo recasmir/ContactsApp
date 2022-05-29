@@ -1,4 +1,4 @@
-<div class="container-xxl p-4">
+<div class="container-xxl p-4 d-flex">
   <div class="col-3">
     <div class="row">
       <div class="col-12">
@@ -6,17 +6,28 @@
       </div>
       <div class="col-12 bg-info">
         <div class="row infoBox p-3">
-          <div class="col-2">
+          <div class="col-2"
+               *ngIf="isShowAbcSearch">
             <ul class="ps-0 centerVertical">
               <li *ngFor="let letter of letters; let i=index"
-                  class="letters">
+                  class="letters"
+                  (click)="receiveSearch(letter)">
                 {{letter}}
+              </li>
+            </ul>
+          </div>
+          <div class="col-2"
+               *ngIf="isShowAbcButton">
+            <ul class="ps-0 centerVertical">
+              <li class="letters"
+                  (click)="showFullList()">
+                ABC
               </li>
             </ul>
           </div>
           <div class="col-9 borderLeft ms-4">
             <ul class="ps-0">
-              <li *ngFor="let contact of contacts | filter : search : page"
+              <li *ngFor="let contact of contacts | filter : search : page : increment"
                   class="pb-1 contacts"
                   (click)="expandContact(contact.id)">
                 {{contact.name}}
@@ -26,16 +37,17 @@
           <div class="col-1 dots centerVertical">
             <i class="fa-solid fa-circle"
                (click)="changePage(0)"
-               [ngClass]="'selected'"></i>
+               ></i>
             <i class="fa-solid fa-circle"
               (click)="changePage(50)"
-              [ngClass]="'selected'"></i>
+              ></i>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-9">
-    <app-single-contact></app-single-contact>
+  <div class="col-9 pt-2">
+    <app-single-contact *ngIf="contactCalled"></app-single-contact>
+    <!-- <app-single-contact></app-single-contact> -->
   </div>
 </div>
