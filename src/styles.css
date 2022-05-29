@@ -34,3 +34,8 @@ h1,h2,h3,h4,h5,h6,p,li{
   cursor: pointer;
   color: #008bc5;
 }
+
+.active{
+  color:#008bc5;
+  background-color: #008bc5;
+}

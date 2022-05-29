@@ -11,8 +11,3 @@ export interface Contact {
   email:   string;
   photo:   string;
 }
-
-// export enum Gender {
-//   Female = "female",
-//   Male = "male",
-// }

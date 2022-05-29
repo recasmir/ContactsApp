@@ -1,4 +1,12 @@
-<div class="container ms-5">
+<div class="container d-flex start justify-content-center"
+      *ngIf="!isContactCalled">
+  <div class="col-8 bg-info p-3 text-center">
+    <h2>Select one contact on the left to see their contacts.</h2>
+  </div>
+
+</div>
+<div class="container ms-5"
+      *ngIf="isContactCalled">
   <div clsss="col-12 ">
     <div class="row bg-info">
       <div class="col-2">
@@ -17,7 +25,7 @@
     <div class="row bg-info p-4 mt-4 ">
       <div class="col-12">
         <div class="row justify-content-center">
-          <div class="col-2 bg-whit text-center m-2 contactCard"
+          <div class="col-2 text-center m-2 contactCard"
           *ngFor="let contact of shuffledContacts | filter:search:page:increment">
             <img src="{{contact.photo}}">
             <p>{{contact.name}}</p>
@@ -31,13 +39,13 @@
             <i class="fa-solid fa-circle mx-1"
               (click)="changePage(20)"
               ></i>
-              <i class="fa-solid fa-circle mx-1"
+            <i class="fa-solid fa-circle mx-1"
               (click)="changePage(40)"
               ></i>
-              <i class="fa-solid fa-circle mx-1"
+            <i class="fa-solid fa-circle mx-1"
               (click)="changePage(60)"
               ></i>
-              <i class="fa-solid fa-circle mx-1"
+            <i class="fa-solid fa-circle mx-1"
               (click)="changePage(80)"
               ></i>
           </div>

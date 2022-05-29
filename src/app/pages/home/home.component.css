@@ -2,12 +2,9 @@ li{
   list-style: none;
 }
 
-
 .dots{
   right: 10px;
 }
-
-
 .selected{
   color:#008bc5;
 }
@@ -21,7 +18,7 @@ li{
   margin-top: 2px;
 }
 
-.letters:hover{
+.letters:hover, .contacts:hover{
   cursor: pointer;
 }
 
@@ -29,6 +26,3 @@ li{
   border-left: 2px solid white;
 }
 
-.contacts:hover{
-  cursor: pointer;
-}

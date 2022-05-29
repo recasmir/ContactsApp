@@ -1,8 +1,6 @@
-import { SingleContactComponent } from './../../components/single-contact/single-contact.component';
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/models/contact.interface';
 import { ApiCallService } from 'src/app/services/api-call.service';
-import { Router } from '@angular/router';
 import { InteractionService } from './../../services/interaction.service';
 
 @Component({
@@ -16,27 +14,18 @@ export class HomeComponent implements OnInit {
   search: string = '';
   page: number = 0;
   increment: number = 50;
+  statusPage: boolean = true;
   abc: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   letters: string[] = this.abc.split('');
-  contactCalled: boolean = false;
   isShowAbcSearch:boolean = true;
   isShowAbcButton: boolean = false;
 
   constructor(private apiCallService: ApiCallService,
-              private router: Router,
               private interactionService: InteractionService
-              ) {
-                //AAA
-                console.log('im in const HOME')
-
-
-              }
+              ) {}
 
   ngOnInit(): void {
     this.showContacts();
-    //AAA
-    console.log('im in ON INIT HOME ')
-
   }
 
   showContacts(){
@@ -48,27 +37,16 @@ export class HomeComponent implements OnInit {
       })
   }
 
-  expandContact(id:string){
-    console.log('im in expandContact home page beginning')
-    this.contactCalled = true;
-    //AAA
-    console.log('ID ' + id);
+  expandContact(id: string){
     this.interactionService.sendContactId(id);
-    this.router.navigate([`contact/${id}`]);
-
-    console.log('im in expandContact home page end')
-    //AAA
-    console.log('contactCalled' + this.contactCalled);
-
   }
 
-  //Pagination
-  changePage(page:number){
-    this.page=page;
+  changePage(page: number){
+    this.page = page;
+    this.statusPage = !this.statusPage;
   }
 
-  //Search filter
-  receiveSearch($event:string){
+  receiveSearch($event: string){
     this.search = $event;
     this.isShowAbcSearch = false;
     this.isShowAbcButton = true;

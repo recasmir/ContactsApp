@@ -4,11 +4,10 @@ img{
   padding: 15px;
 }
 
-.bg-whit{
+.contactCard{
+  height: 220px;
   border-radius: 25px;
   background-image: linear-gradient(rgba(255,255,255,1), rgba(255,0,0,0))!important;
 }
 
-.contactCard{
-  height: 220px;
-}
+

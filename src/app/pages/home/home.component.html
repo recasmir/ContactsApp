@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 bg-info">
         <div class="row infoBox p-3">
-          <div class="col-2 ps-0"
+          <div class="col-3 col-xl-2 ps-0"
                *ngIf="isShowAbcSearch">
             <ul class="ps-0 centerVertical">
               <li *ngFor="let letter of letters; let i=index"
@@ -16,7 +16,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-2 ps-0"
+          <div class="col-3 col-xl-2 ps-0"
                *ngIf="isShowAbcButton">
             <ul class="ps-0 centerVertical">
               <li class="letters"
@@ -25,7 +25,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-9 borderLeft ms-4">
+          <div class="col-8 col-xl-9 borderLeft ms-4">
             <ul class="ps-0">
               <li *ngFor="let contact of contacts | filter : search : page : increment"
                   class="pb-1 contacts"
@@ -37,9 +37,11 @@
           <div class="col-1 dots centerVertical">
             <i class="fa-solid fa-circle"
                (click)="changePage(0)"
+               [ngClass]="statusPage ? 'active' : ''"
                ></i>
             <i class="fa-solid fa-circle"
               (click)="changePage(50)"
+              [ngClass]="!statusPage ? 'active' : ''"
               ></i>
           </div>
         </div>
@@ -47,7 +49,6 @@
     </div>
   </div>
   <div class="col-9 pt-2">
-    <app-single-contact *ngIf="contactCalled"></app-single-contact>
-    <!-- <app-single-contact></app-single-contact> -->
+    <app-single-contact></app-single-contact>
   </div>
 </div>

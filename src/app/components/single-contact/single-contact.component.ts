@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from 'src/app/services/api-call.service';
 import { Contact } from 'src/app/models/contact.interface';
 import { InteractionService } from 'src/app/services/interaction.service';
@@ -19,34 +18,22 @@ export class SingleContactComponent implements OnInit {
   page: number = 0;
   increment: number = 20;
   idContact: string = '';
-  clickEventSubscription:Subscription;
+  clickEventSubscription: Subscription;
+  isContactCalled: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private apiCallService: ApiCallService,
+  constructor(private apiCallService: ApiCallService,
               private interactionService: InteractionService) {
-                console.log('im in constructor beginning')
-    // this.activatedRoute.params.subscribe(params => {
-    //   this.idContact = params['id'];
-    // }
-    // )
-
-    console.log('im in constructor after route')
 
     this.clickEventSubscription = this.interactionService.getContactId()
     .subscribe((id)=>{
+      this.isContactCalled = true;
       this.callSingleContact(id);
       this.showContactsOfContact();
-      //AAA
-      console.log('im in SINGE COMP ID is ' + id)
     })
-     console.log('im in constructor after clickevent subscription')
+
    }
 
-  ngOnInit(): void {
-    //AAA
-    console.log('im in ONINIT SINGLE COMP')
-
-  }
+  ngOnInit(): void {}
 
   callSingleContact(id:string){
     console.log('im in callSingleContact before apiCall')
@@ -71,17 +58,15 @@ export class SingleContactComponent implements OnInit {
 
         this.shuffledContacts = shuffled;
       })
-
-
   }
 
   //Pagination
-  changePage(page:number){
-    this.page=page;
+  changePage(page: number){
+    this.page = page;
   }
 
   //Search filter
-  receiveSearch($event:string){
+  receiveSearch($event: string){
     this.search = $event;
   }
 
