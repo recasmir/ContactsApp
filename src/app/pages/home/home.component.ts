@@ -78,11 +78,5 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  showFullList(){
-    this.isShowAbcSearch = true;
-    this.isShowAbcButton = false;
-    this.showContacts();
-  }
-
 }
 

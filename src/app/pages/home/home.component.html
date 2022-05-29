@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 bg-info">
         <div class="row infoBox p-3">
-          <div class="col-2"
+          <div class="col-2 ps-0"
                *ngIf="isShowAbcSearch">
             <ul class="ps-0 centerVertical">
               <li *ngFor="let letter of letters; let i=index"
@@ -16,11 +16,11 @@
               </li>
             </ul>
           </div>
-          <div class="col-2"
+          <div class="col-2 ps-0"
                *ngIf="isShowAbcButton">
             <ul class="ps-0 centerVertical">
               <li class="letters"
-                  (click)="showFullList()">
+                  (click)="receiveSearch('')">
                 ABC
               </li>
             </ul>
