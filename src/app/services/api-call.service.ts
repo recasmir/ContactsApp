@@ -15,13 +15,9 @@ export class ApiCallService {
 
 
   getContacts(){
-    // const headers = new HttpHeaders()
-    // .set('Access-Control-Allow-Origin','*')
-    // .set('Vary', 'Origin')
-    // .set('content-type', 'application/json')
-    // .set('Content-MD5', '3zUzDfvEE2c0/Yq89UovgQ==')
-    // .set('ETag', '"0x8DA3EF8D53E18D9"')
-    // .set('Server', 'Windows-Azure-Web/1.0 Microsoft-HTTPAPI/2.0')
+    const headers = new HttpHeaders()
+    .set('Access-Control-Allow-Origin','*')
+    .set('content-type', 'application/json')
 
     // let headers = new HttpHeaders()
     // headers=headers.set('content-type','application/json')

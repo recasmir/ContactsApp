@@ -1,6 +1,0 @@
-{
-  "/api": {
-    "target": "https://fakecontactsspq.z6.web.core.windows.net/contactos.json",
-    "secure": false
-  }
-}
