@@ -36,20 +36,16 @@ export class SingleContactComponent implements OnInit {
   ngOnInit(): void {}
 
   callSingleContact(id:string){
-    console.log('im in callSingleContact before apiCall')
     this.apiCallService.getContacts()
       .subscribe( resp => {
           this.singleContact = resp.contacts.find(contact => contact.id === id);
-          console.log(this.singleContact)
       })
-
   }
 
   showContactsOfContact(){
     this.apiCallService.getContacts()
       .subscribe( resp => {
         this.contacts = resp.contacts
-        console.log(this.contacts)
 
         let shuffled = this.contacts
         .map(value => ({ value, sort: Math.random() }))
@@ -60,11 +56,15 @@ export class SingleContactComponent implements OnInit {
       })
   }
 
-  //Pagination
-  changePage(page: number){
-    this.page = page;
-  }
+  statusPage: boolean[] = [true, false, false, false, false]
+  paginationArray:number[] = [0,20,40,60,80];
 
+  //Pagination
+  changePage(page: number, index: number){
+    this.page = page;
+    this.statusPage = [false, false, false, false, false];
+    this.statusPage[index] = true;
+  }
   //Search filter
   receiveSearch($event: string){
     this.search = $event;

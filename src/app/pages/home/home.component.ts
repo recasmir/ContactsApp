@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
       .subscribe( resp => {
         this.contacts = resp.contacts;
         this.contacts.sort((a,b) => a.name > b.name ? 1: -1);
-        console.log(this.contacts);
       })
   }
 

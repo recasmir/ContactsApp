@@ -27,7 +27,7 @@
           </div>
           <div class="col-8 col-xl-9 borderLeft ms-4">
             <ul class="ps-0">
-              <li *ngFor="let contact of contacts | filter : search : page : increment"
+              <li *ngFor="let contact of contacts | filter:search:page:increment"
                   class="pb-1 contacts"
                   (click)="expandContact(contact.id)">
                 {{contact.name}}
