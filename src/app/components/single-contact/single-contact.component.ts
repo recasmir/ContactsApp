@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiCallService } from 'src/app/services/api-call.service';
 import { Contact } from 'src/app/models/contact.interface';
 import { InteractionService } from 'src/app/services/interaction.service';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './single-contact.component.html',
   styleUrls: ['./single-contact.component.css']
 })
-export class SingleContactComponent implements OnInit {
+export class SingleContactComponent implements OnInit, OnDestroy {
 
   contacts: Contact[] = [];
   shuffledContacts: Contact[] = [];
@@ -56,18 +56,23 @@ export class SingleContactComponent implements OnInit {
       })
   }
 
-  statusPage: boolean[] = [true, false, false, false, false]
+ //Pagination
+  statusPage: boolean[] = [true, false, false, false, false];
   paginationArray:number[] = [0,20,40,60,80];
 
-  //Pagination
   changePage(page: number, index: number){
     this.page = page;
     this.statusPage = [false, false, false, false, false];
     this.statusPage[index] = true;
   }
+
   //Search filter
   receiveSearch($event: string){
     this.search = $event;
+  }
+
+  ngOnDestroy(){
+    this.clickEventSubscription.unsubscribe();
   }
 
 }

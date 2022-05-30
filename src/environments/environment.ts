@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BACKEND_API_MOCK: '../assets/data.json',
+  BACKEND_API: 'https://fakecontactsspq.z6.web.core.windows.net/contactos.json'
 };
 
 /*
